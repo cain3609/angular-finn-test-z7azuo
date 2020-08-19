@@ -1,0 +1,50 @@
+<!--UppercasePipe格式化-->
+<!--
+<h2>{{hero.hero_til | uppercase}}</h2>
+<div><span>id:</span>{{hero.id}}</div>
+<div><span>name:</span>{{hero.name}}</div>
+<br>
+-->
+<!--
+<div>
+  <label>
+    name:
+    <!--[(ngModel)] 雙向綁定-->
+<!--
+    <input [(ngModel)]='hero.name' placeholder="name"/>
+  </label>
+</div>
+-->
+<div>
+	<-----------------------------我是分隔線------------------------------->
+</div>
+<!--迴圈取出英雄資料-->
+<div>
+	<h1>＊迴圈取得英雄列表＊</h1>
+	<br>
+	<!--顯示區-->
+	<!--
+  <div *ngIf="selectedName">
+    <h2>{{selectedName.name | uppercase}} -DETAILS-<br>當選取英雄時才顯示</h2>
+    <br>
+    <span>id:</span>{{selectedName.id}}
+    <label>
+      name:
+      <input [(ngModel)]="selectedName.name" placeholder="name"/>
+    </label>
+  </div>
+  -->
+	<!--選項區-->
+	<ul class="heroes">
+		<!--[class.selected]判斷當前的forList值與selectedName是否相同，
+    相同就會新增CLASS，反之則會移除-->
+		<li *ngFor="let forList of hero_list" (click)="onSelect(forList)" [class.selected]="forList === selectedName">
+			<span class="badge">{{forList.id}}</span>{{forList.name}}
+		</li>
+	</ul>
+</div>
+<div>
+	<-----------------------------我是分隔線------------------------------->
+</div>
+<!--屬性綁定(單向)-->
+<app-hero-detail [heroOne]="selectedName"></app-hero-detail>

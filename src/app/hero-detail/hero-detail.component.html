@@ -1,0 +1,28 @@
+<div *ngIf="heroOne">
+    <table class="delTable">
+      <tr>
+        <td colspan="3">{{heroOne.name | uppercase}} -DETAILS in Hero-detail component</td>
+      </tr>
+      <tr>
+        <td>ID</td>
+        <td>PROFESSION</td>
+        <td>NAME</td>
+      </tr>
+      <tr>
+        <td>{{heroOne.id}}</td>
+        <td>{{heroOne.hero_til}}</td>
+        <td>{{heroOne.name}}</td>
+      </tr>
+    </table>
+    <h2></h2>
+    <br>
+    <div>
+      <span>id:</span>{{heroOne.id}}
+    </div>
+    <div>
+      <label>
+        name:
+        <input [(ngModel)]="heroOne.name" placeholder="name"/>
+      </label>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+.delTable {
+  border: 2px black solid;
+}
+.delTable td{
+  border: 1px black solid;
+}
